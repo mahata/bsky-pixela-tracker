@@ -51,3 +51,9 @@ chmod +x .git/hooks/pre-commit
 ```
 
 Now, every time you commit, the pre-commit checks will run automatically.
+
+## Demo
+
+The below image is created by this program:
+
+![Pixela bsky-post-graph](https://pixe.la/v1/users/mahata/graphs/bsky-graph)
