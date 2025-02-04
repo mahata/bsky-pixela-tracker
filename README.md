@@ -1,44 +1,53 @@
-# What is this repository?
+# Bluesky to Pixela Tracker
 
-FIXME.
+This repository contains a script that tracks the number of posts you make on [Bluesky](http://bsky.app) each day and logs it to [Pixela](https://pixe.la).
 
 ## Prerequisites
 
-* Python3
-* [Bluesky](http://bsky.app) Account
-  * Also, an App Password associated with it
-* [Pixela](978-4-8144-0104-8) Account
-  * Also, a Graph ID associated with it
+Before running the script, ensure you have the following:
 
-## How to run
+- **Python 3** installed
+- **Bluesky account**
+  - An **App Password** associated with it
+- **Pixela account**
+  - A **Graph ID** associated with it
 
-The following commands need to be run only for the first time.
+## Installation
 
-```
+Run the following commands to set up your environment (only required on first setup):
+
+```sh
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Then, set up the environment variables as follows:
+## Configuration
 
-```
-$ cp .env.sample .env
-(Fix .env so that the file has appropriate env vars for the service)
-```
+Before running the script, configure the required environment variables:
 
-Finally, run the script:
-
-```
-$ python main.py
+```sh
+cp .env.sample .env
 ```
 
-## Tweak it loally
+Then, edit `.env` to provide the appropriate credentials for Bluesky and Pixela.
 
-It's nice to make sure your change doesn't break anything. The best way to do this is to set up a local pre-commit hook like this:
+## Usage
 
+Once everything is set up, run the script with:
+
+```sh
+python main.py
 ```
-$ mkdir -p .git/hooks
-$ echo "make pre-commit" > .git/hooks/pre-commit
-$ chmod +x .git/hooks/pre-commit
+
+## Development
+
+To ensure that your changes do not break anything, set up a local **pre-commit hook**:
+
+```sh
+mkdir -p .git/hooks
+echo "make pre-commit" > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
 ```
+
+Now, every time you commit, the pre-commit checks will run automatically.
