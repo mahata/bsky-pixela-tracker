@@ -1,0 +1,30 @@
+name: Python CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ./
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 'pypy3.13'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Ruff (lint)
+        run: ruff check --output-format=github .
+
+      - name: Run Ruff (format)
+        run: ruff format . --check --diff
+
+      - name: Run Tests
+        run: python -m unittest
