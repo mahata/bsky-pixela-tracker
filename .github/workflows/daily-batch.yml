@@ -22,3 +22,9 @@ jobs:
 
       - name: Run the script
         run: python main.py
+        env:
+          BSKY_APP_PASSWORD: ${{ vars.BSKY_APP_PASSWORD }}
+          BSKY_USERNAME: ${{ vars.BSKY_USERNAME }}
+          PIXELA_GRAPH_ID: ${{ vars.PIXELA_GRAPH_ID }}
+          PIXELA_USERNAME: ${{ vars.PIXELA_USERNAME }}
+          PIXELA_USER_TOKEN: ${{ vars.PIXELA_USER_TOKEN }}
