@@ -1,4 +1,6 @@
 name: Post to Pixela on a daily basis
+permissions:
+  contents: read
 on:
   schedule:
     - cron: '0 0 * * *' # Every day at 00:00 UTC
